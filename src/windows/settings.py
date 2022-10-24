@@ -1,5 +1,5 @@
 from tkinter import *
-from cfg import init_variables
+from cfg import init_variables as iv
 from src.functions.path_resources import resources
 
 def init():
@@ -13,9 +13,9 @@ def init():
     settings.iconphoto(False, icon)
 
     def apply_settings():
-        init_variables.url = url_box.get()
-        init_variables.field1 = field1_box.get()
-        init_variables.field2 = field2_box.get()
+        iv.url = url_box.get()
+        iv.field1 = field1_box.get()
+        iv.field2 = field2_box.get()
 
     def accept_settings():
         apply_settings()
@@ -26,9 +26,9 @@ def init():
         field1_box.delete(0, len(field1_box.get()))
         field2_box.delete(0, len(field2_box.get()))
 
-        url_box.insert(0, init_variables.DEFAULT_URL)
-        field1_box.insert(0, init_variables.DEFAULT_FIELD1)
-        field2_box.insert(0, init_variables.DEFAULT_FIELD2)
+        url_box.insert(0, iv.DEFAULT_URL)
+        field1_box.insert(0, iv.DEFAULT_FIELD1)
+        field2_box.insert(0, iv.DEFAULT_FIELD2)
 
     options_frame = Frame(settings)
     op_url_frame = Frame(options_frame)
@@ -37,21 +37,21 @@ def init():
     op_buttons_frame = Frame(options_frame)
 
     #Link Options
-    url_label = Label(op_url_frame, text = "url: ", font = init_variables.font)
-    url_box = Entry(op_url_frame, font = init_variables.font)
-    url_box.insert(0, init_variables.url)
+    url_label = Label(op_url_frame, text = "url: ", font = iv.font)
+    url_box = Entry(op_url_frame, font = iv.font)
+    url_box.insert(0, iv.url)
 
-    field1_label = Label(op_field1_frame, text = "field1: ", font = init_variables.font)
-    field1_box = Entry(op_field1_frame, font = init_variables.font)
-    field1_box.insert(0, init_variables.field1)
+    field1_label = Label(op_field1_frame, text = "field1: ", font = iv.font)
+    field1_box = Entry(op_field1_frame, font = iv.font)
+    field1_box.insert(0, iv.field1)
 
-    field2_label = Label(op_field2_frame, text = "field2: ", font = init_variables.font)
-    field2_box = Entry(op_field2_frame, font = init_variables.font)
-    field2_box.insert(0, init_variables.field2)
+    field2_label = Label(op_field2_frame, text = "field2: ", font = iv.font)
+    field2_box = Entry(op_field2_frame, font = iv.font)
+    field2_box.insert(0, iv.field2)
 
-    default_button = Button(op_buttons_frame, text = "Restore", command = restore_settings, font = init_variables.font)
-    apply_button = Button(op_buttons_frame, text = "Apply", command = apply_settings, font = init_variables.font)
-    accept_button = Button(op_buttons_frame, text = "Accept", command = accept_settings, font = init_variables.font)
+    default_button = Button(op_buttons_frame, text = "Restore", command = restore_settings, font = iv.font)
+    apply_button = Button(op_buttons_frame, text = "Apply", command = apply_settings, font = iv.font)
+    accept_button = Button(op_buttons_frame, text = "Accept", command = accept_settings, font = iv.font)
 
     options_frame.pack(padx=15, pady=15, fill=X, expand=True)
 
