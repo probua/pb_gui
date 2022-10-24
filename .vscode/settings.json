@@ -1,5 +1,9 @@
 {
     "python.analysis.extraPaths": [
         "./src"
-    ]
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/__pycache__": true
+    }
 }
