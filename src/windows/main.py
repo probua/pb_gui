@@ -1,11 +1,13 @@
+import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame
 import webbrowser
 from tkinter import *
 from PIL import Image as PIL_Image
 
 from cfg import global_variables as g
-from src.functions.path_resources import resources
 from src.windows import settings as win_settings
+from src.functions.path_resources import resources
 
 
 def init():
@@ -16,6 +18,8 @@ def init():
     root.resizable(False, False)
     icon = PhotoImage(file = resources("probua.png")) # Icon
     root.iconphoto(False, icon)
+
+    pygame.mixer.init() # Init music player
 
     def play_music():
         pygame.mixer.music.load(resources("nggyu.mp3"))

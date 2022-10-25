@@ -2,6 +2,7 @@ from tkinter import *
 from cfg import global_variables as g
 from src.functions.path_resources import resources
 
+
 def init():
 
     icon = PhotoImage(file = resources("probua.png")) # Icon
