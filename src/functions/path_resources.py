@@ -1,10 +1,12 @@
 import os
 import sys
+from cfg import global_variables as g
+
 
 def resources(file):
-    try: base_path = sys._MEIPASS
-    except: base_path = os.path.abspath(".")
-    base_path += "/res"
+    try: res_path = sys._MEIPASS
+    except: res_path = g.APP_PATH
+    res_path += "/res"
 
-    path = os.path.join(base_path, file)
+    path = os.path.join(res_path, file)
     return path

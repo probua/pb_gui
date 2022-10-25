@@ -1,5 +1,10 @@
-def init():
+def init(base_path):
 
+    # Base Path
+    global APP_PATH
+    APP_PATH = base_path
+
+    # Init
     global DEFAULT_URL
     global DEFAULT_FIELD1
     global DEFAULT_FIELD2

@@ -3,7 +3,7 @@ import webbrowser
 from tkinter import *
 from PIL import Image as PIL_Image
 
-from cfg import init_variables as iv
+from cfg import global_variables as g
 from src.functions.path_resources import resources
 from src.windows import settings as win_settings
 
@@ -37,7 +37,7 @@ def init():
         root.after(80, lambda: play_gif(count))
 
     def gen_button_on_pressed():
-        gen_link = f"{iv.url}?field1={iv.field1}&field2={iv.field2}"
+        gen_link = f"{g.url}?field1={g.field1}&field2={g.field2}"
         link_label['text'] = gen_link
 
         link_copy_button["state"] = NORMAL
@@ -59,16 +59,16 @@ def init():
     link_frame = Frame(main_frame)
 
     # Elements
-    settings_button = Button(main_frame, text = "Settings", command = win_settings.init, font = iv.font)
+    settings_button = Button(main_frame, text = "Settings", command = win_settings.init, font = g.font)
     gif_label = Label(music_frame)
-    play_music_button = Button(music_options_frame, text = "Play Music", command = play_music, font = iv.font)
-    stop_music_button = Button(music_options_frame, text = "Stop Music", command = stop_music, font = iv.font)
-    footer_label = Label(main_frame, text = iv.footer, font = iv.font)
+    play_music_button = Button(music_options_frame, text = "Play Music", command = play_music, font = g.font)
+    stop_music_button = Button(music_options_frame, text = "Stop Music", command = stop_music, font = g.font)
+    footer_label = Label(main_frame, text = g.footer, font = g.font)
 
-    gen_button = Button(main_frame, text = "Generate", command = lambda: gen_button_on_pressed(), font = iv.font)
-    link_label = Label(link_frame, bg = "white", text = "Generated Link", font = iv.font)
-    link_copy_button = Button(link_frame, text = "Copy", command = link_copy_button_on_pressed, font = iv.font)
-    open_browser_button = Button(main_frame, text = "Open in browser", command = open_browser_button_on_pressed, font = iv.font)
+    gen_button = Button(main_frame, text = "Generate", command = lambda: gen_button_on_pressed(), font = g.font)
+    link_label = Label(link_frame, bg = "white", text = "Generated Link", font = g.font)
+    link_copy_button = Button(link_frame, text = "Copy", command = link_copy_button_on_pressed, font = g.font)
+    open_browser_button = Button(main_frame, text = "Open in browser", command = open_browser_button_on_pressed, font = g.font)
 
     # GUI
     main_frame.pack(padx=15, pady=15)

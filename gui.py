@@ -1,16 +1,15 @@
 #!/bin/python3
 import os
-os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
-
 import sys
-sys.path.append('src')
-
+base_path = os.path.dirname(__file__)
+sys.path.append(f'{base_path}/src')
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import pygame
 from windows import main
-from cfg import init_variables as iv
+from cfg import global_variables as g
 
 
 if __name__ == "__main__":
-    iv.init()
+    g.init(base_path)
     pygame.mixer.init()
     main.init()
